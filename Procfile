@@ -1,1 +1,1 @@
-worker: python szym.py
+worker: python Szym.py
