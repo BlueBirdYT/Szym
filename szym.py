@@ -8,6 +8,7 @@ import random
 import json
 import aiohttp
 import datetime
+import os
 
 Forbidden= discord.Embed(title="Permission Denied", description="1) Please check whether you have permission to perform this action or not. \n2) Please check whether my role has permission to perform this action in this channel or not. \n3) Please check my role position.", color=0x00ff00)
 client = commands.Bot(description="prefix is R", command_prefix=commands.when_mentioned_or("R" ), pm_help = True)
@@ -936,4 +937,4 @@ async def remind(ctx, time=None, *,remind=None):
     await client.say("Reminder: {} by {}".format(remind, ctx.message.author.mention))
     await client.send_message(ctx.message.author, "Reminder: {}".format(remind))
 
-client.run('NDg2NTg4NzMwODQ1NTYwODMz.Dzir5w.6Y6Ze3Hqz-bG2Pm45WOAXDAQGug')
+client.run(os.getenv('Token'))
