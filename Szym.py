@@ -260,6 +260,8 @@ async def warn(ctx, userName: discord.User=None,*, message:str=None):
             embed=discord.Embed(title="User Warned!", description="{0} warned by {1} for {2}".format(userName, ctx.message.author, message), color=0x0521F6)
             await client.send_message(channel, embed=embed)
 
+            
+            
 @client.command(pass_context=True)
 async def virus(ctx,user: discord.Member=None,*,hack=None):
     nome = ctx.message.author
