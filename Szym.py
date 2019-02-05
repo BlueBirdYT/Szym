@@ -850,7 +850,8 @@ async def say(ctx, *, msg = None):
       return
     else:
       if not msg: await client.say("Please specify a message to send")
-      else: await client.say(msg)
+      else: 
+        await client.say(msg)
 
         
 
