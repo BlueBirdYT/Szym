@@ -409,7 +409,7 @@ async def mute(ctx, member: discord.Member=None, mutetime=None):
         return
     if ctx.message.author.bot:
       return
-else:
+ else:
       mutetime =int(mutetime)
         mutetime = mutetime * 60
         output = mutetime/60
