@@ -840,9 +840,6 @@ async def rolldice(ctx):
     await client.send_typing(ctx.message.channel)
     await client.say(embed=em)
 
-@client.command(pass_context = True)
-async def invite():
-    await client.say('here is the link to invite me https://discordapp.com/api/oauth2/authorize?client_id=537645440091291669&permissions=8&scope=bot')
 
 @client.command(pass_context = True)
 @commands.has_permissions(administrator=True)
