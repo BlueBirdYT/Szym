@@ -389,6 +389,7 @@ async def addchannel(ctx, channel: str=None):
             await client.create_channel(server, channel, everyone)
             await client.say("{} channel has been created.".format(channel))
 
+
 @client.command(pass_context = True)
 async def mute(ctx, member: discord.Member=None, mutetime=None):
     msgauthor = ctx.message.author
@@ -397,24 +398,6 @@ async def mute(ctx, member: discord.Member=None, mutetime=None):
         return
     if mutetime is None:
         await client.say('Please specify time i.e. Mention a member to mute with time. Example-``Rmute @user <time in minutes>``')
-        return
-    if member.server_permissions.kick_members:
-        await client.say('**You cannot mute admin/moderator!**')
-        return
-    if msgauthor.server_permissions.kick_members == False:
-        await client.say('**You do not have permission. So you are unable to use this command**')
-        return
-    if discord.utils.get(member.server.roles, name='Muted') is None:
-        await client.say('No muted role found. Please add it')
-        return
-@client.command(pass_context = True)
-async def mute(ctx, member: discord.Member=None, mutetime=None):
-    msgauthor = ctx.message.author
-    if member is None:
-        await client.say('Please specify member i.e. Mention a member to mute. Example-``Mmute @user <time in minutes>``')
-        return
-    if mutetime is None:
-        await client.say('Please specify time i.e. Mention a member to mute with time. Example-``Mmute @user <time in minutes>``')
         return
     if member.server_permissions.kick_members:
         await client.say('**You cannot mute admin/moderator!**')
